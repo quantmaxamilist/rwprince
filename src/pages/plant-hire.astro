@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const tags = ['Grab Lorries', 'Tipper Lorries', '20 Tonne Lorries', '13–20 Tonne Excavators'];
+---
+
+<Base
+  title="Plant Hire & Contracting | R W Prince — Somerset"
+  description="Plant hire from R W Prince — grab lorries, tippers and excavators, for hire or contracted out with our own skilled operators."
+>
+  <PageHeader
+    crumb="Plant Hire"
+    eyebrow="Plant Hire & Contracting"
+    title="Plant for hire, or contracted with our own operators"
+    lede="We have a large range of plant for hire, or our plant can be contracted out and operated by our highly skilled operators — from grab lorries and tippers to excavators, for jobs of any size."
+  />
+
+  <section class="feature">
+    <div class="wrap feature-grid">
+      <div class="feature-media" style="background-image:url('/images/slide-05.jpg')" aria-hidden="true"></div>
+      <div class="feature-copy">
+        <p class="eyebrow">Our fleet</p>
+        <h2>The right machine, on site, on time</h2>
+        <p>Whether you need a machine dropped off or a fully operated job, our fleet and drivers know the local roads and sites inside out.</p>
+        <ul class="tag-list">
+          {tags.map((t) => <li>{t}</li>)}
+        </ul>
+        <a href="/contact" class="btn btn-outline">Hire plant</a>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Need plant on site this week?"
+    text="Call the yard directly or send us the details — we'll come back to you the same working day."
+  />
+</Base>

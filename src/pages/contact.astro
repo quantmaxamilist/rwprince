@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { site } from '../data/site';
+---
+
+<Base
+  title="Contact | R W Prince — Somerset"
+  description="Contact R W Prince Ltd, Podimore, Yeovil, Somerset, BA22 8JG. Call 01935 849 250 or send an enquiry."
+>
+  <PageHeader
+    crumb="Contact"
+    eyebrow="Get in touch"
+    title="Visit, call or send us your enquiry"
+    lede="Whatever you need — aggregates, asphalt, a tip run or plant on site — the quickest way to get a price is to call the yard directly."
+  />
+
+  <section class="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <p class="eyebrow">Details</p>
+        <h2>R W Prince Ltd</h2>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Address</span>
+            <span>{site.address}</span>
+          </li>
+          <li>
+            <span class="contact-label">Phone</span>
+            <a href={site.phoneHref}>{site.phone}</a>
+          </li>
+          <li>
+            <span class="contact-label">Email</span>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </li>
+        </ul>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <label>
+            Name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Phone
+            <input type="tel" name="phone" required />
+          </label>
+        </div>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          What do you need?
+          <select name="service">
+            <option>Aggregates</option>
+            <option>Asphalt / Tarmac</option>
+            <option>Recycling / Waste Disposal</option>
+            <option>Plant Hire</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary btn-lg btn-full">Send Enquiry</button>
+        <p class="form-note" id="formNote" hidden>Thanks — this is a demo form, no message was actually sent. Please call {site.phone} for a real enquiry.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="map-band">
+    <iframe
+      src="https://www.google.com/maps?q=R+W+Prince+Ltd+Podimore+Yeovil+Somerset+BA22+8JG&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Map showing R W Prince Ltd, Podimore, Yeovil, Somerset"
+    ></iframe>
+  </section>
+</Base>

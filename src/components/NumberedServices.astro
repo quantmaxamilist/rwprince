@@ -1,0 +1,34 @@
+---
+import { numberedServices } from '../data/site';
+---
+
+<section class="numbered-services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What we do</p>
+      <h2>Our services</h2>
+      <p class="section-sub">Every job we take on falls under one of these. See the <a href="/services" style="color:var(--red);font-weight:600;">full itemised list</a> for everything we supply and hire.</p>
+    </div>
+    <div class="num-grid">
+      {numberedServices.map((s) => (
+        <a
+          href={s.href}
+          class="num-tile"
+          style={`background-image:url('${s.image}')${s.imagePosition ? `;background-position:${s.imagePosition};` : ''}`}
+        >
+          <span class="num-badge">{s.number}</span>
+          <span class="num-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" set:html={s.iconSvg} />
+          </span>
+          <div class="num-body">
+            <h3>{s.title}</h3>
+            <ul>
+              {s.bullets.map((b) => <li>{b}</li>)}
+            </ul>
+            <span class="num-link">Explore Service →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

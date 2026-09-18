@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import NumberedServices from '../components/NumberedServices.astro';
+import { site } from '../data/site';
+---
+
+<Base
+  title="R W Prince | Aggregates, Asphalt, Plant Hire & Waste Disposal — Somerset"
+  description="R W Prince Ltd — family-owned aggregates, asphalt, plant hire and waste disposal specialists near Podimore, Somerset, serving the South West."
+>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-content">
+        <p class="eyebrow">Family owned &middot; South Somerset &middot; Podimore, A303/A37</p>
+        <h1>Aggregates, asphalt, plant hire and waste disposal from one Somerset yard.</h1>
+        <p class="hero-lede">R W Prince is a family owned business based in South Somerset, just off the Podimore roundabout on the A37. We supply aggregates and asphalt, and provide plant hire and waste disposal services, to businesses, councils and the general public throughout the South West.</p>
+        <div class="hero-actions">
+          <a href="/contact" class="btn btn-primary btn-lg">Get a Quote</a>
+          <a href={site.phoneHref} class="btn btn-ghost btn-lg">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            {site.phone}
+          </a>
+        </div>
+        <ul class="hero-stats">
+          <li><strong>4</strong><span>Core services</span></li>
+          <li><strong>A303/A37</strong><span>Junction access</span></li>
+          <li><strong>Card</strong><span>Payments accepted</span></li>
+        </ul>
+      </div>
+      <div class="hero-photo">
+        <img src="/images/slide-01-hero.jpg" alt="R W Prince tipper truck on site" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div class="wrap strip-inner">
+      <p>We have a vast collective knowledge and industry experience of waste disposal, road building, car parks and everything tarmac related.</p>
+    </div>
+  </section>
+
+  <section class="about-teaser">
+    <div class="wrap">
+      <div class="flourish-head"><h2>About R W Prince</h2></div>
+      <p class="about-teaser-text">R W Prince is a family owned business based in South Somerset, just off the Podimore roundabout on the A37. We have a vast collective knowledge and industry experience of waste disposal, road building, car parks and everything tarmac related, supplying businesses, councils and the general public throughout the South West.</p>
+      <a href="/about" class="btn btn-outline">More about us</a>
+    </div>
+  </section>
+
+  <NumberedServices />
+
+  <CtaBand
+    heading="Need a delivery, a tip run, or plant on site?"
+    text="Call the yard directly or send us the details — we'll come back to you the same working day."
+  />
+</Base>

@@ -1,0 +1,24 @@
+---
+import type { DirectoryGroup } from '../data/site';
+
+interface Props {
+  group: DirectoryGroup;
+}
+
+const { group } = Astro.props;
+---
+
+<div class={`directory-group${group.reverse ? ' reverse' : ''}`}>
+  <div class="directory-media" style={`background-image:url('${group.image}')`}></div>
+  <div class="directory-body">
+    <div class="directory-group-head">
+      <h2>{group.title}</h2>
+      {group.linkHref && (
+        <span><a href={group.linkHref} style="color:var(--red);font-weight:600;">{group.linkLabel}</a></span>
+      )}
+    </div>
+    <div class="directory-grid">
+      {group.items.map((item) => <div class="directory-item">{item}</div>)}
+    </div>
+  </div>
+</div>

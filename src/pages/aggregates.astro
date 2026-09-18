@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const tags = [
+  'Type 1',
+  'Road Planings',
+  'Gravel',
+  'Scalpings',
+  'Clean Stone',
+  'Top Soil',
+  'Washed Sand',
+  'Crushed Concrete',
+  'Building Sand',
+  'Coarse Sand',
+  'Asphalt Products',
+];
+---
+
+<Base
+  title="Aggregates | R W Prince — Somerset"
+  description="Recycled and non-recycled aggregates from R W Prince — Type 1, road planings, gravel, scalpings, sand and more, collected or delivered across Somerset."
+>
+  <PageHeader
+    crumb="Aggregates"
+    eyebrow="Aggregates"
+    title="Recycled and non-recycled aggregates, collected or delivered"
+    lede="Our high quality range of recycled and non-recycled aggregates can be collected by you or delivered by us. We supply everyone from the construction industry and the general public through to local schools and councils."
+  />
+
+  <section class="feature">
+    <div class="wrap feature-grid">
+      <div class="feature-media" style="background-image:url('/images/slide-09.jpg')" aria-hidden="true"></div>
+      <div class="feature-copy">
+        <p class="eyebrow">Quality &amp; standards</p>
+        <h2>Recycled aggregates, with the environment in mind</h2>
+        <p>With a focus on the environmental benefits of minimising primary aggregate extraction, our recycled products are of the highest quality and, where necessary, adhere to all approved standards.</p>
+        <ul class="tag-list">
+          {tags.map((t) => <li>{t}</li>)}
+        </ul>
+        <a href="/contact" class="btn btn-outline">Request a delivery</a>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Need aggregates delivered or ready to collect?"
+    text="Call the yard directly or send us the details — we'll come back to you the same working day."
+  />
+</Base>

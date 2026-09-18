@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const tags = ['Asphalt / Tarmac Supply', 'Hot Boxes', 'Sunday Availability'];
+---
+
+<Base
+  title="Asphalt & Tarmac | R W Prince — Somerset"
+  description="R W Prince's asphalt plant sits at the A303/A37 junction, supplying tarmac and asphalt across Somerset and the South West, including Sundays."
+>
+  <PageHeader
+    crumb="Asphalt"
+    eyebrow="Asphalt / Tarmac"
+    title="A modern asphalt plant at the A303/A37 junction"
+    lede="With our state-of-the-art asphalt plant, we aim to be a leading supplier of tarmac in Somerset, servicing requirements quickly across the South West."
+  />
+
+  <section class="feature">
+    <div class="wrap feature-grid">
+      <div class="feature-media" style="background-image:url('/images/slide-03.jpg')" aria-hidden="true"></div>
+      <div class="feature-copy">
+        <p class="eyebrow">Location &amp; availability</p>
+        <h2>Fast turnaround, seven days a week</h2>
+        <p>Our location at the junction of the A303 and A37 trunk routes means we can quickly service asphalt and tarmac requirements throughout the South West — including hot boxes, and tarmac and asphalt supply on Sundays.</p>
+        <div class="stat-row">
+          <div><strong>A303 / A37</strong><span>Direct trunk-route access</span></div>
+          <div><strong>Sundays</strong><span>Tarmac &amp; asphalt available</span></div>
+        </div>
+        <ul class="tag-list">
+          {tags.map((t) => <li>{t}</li>)}
+        </ul>
+        <a href="/contact" class="btn btn-outline">Get an asphalt quote</a>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Need tarmac or asphalt on site?"
+    text="Call the yard directly or send us the details — we'll come back to you the same working day."
+  />
+</Base>

@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { galleryImages } from '../data/site';
+---
+
+<Base
+  title="About | R W Prince — Somerset"
+  description="R W Prince is a family owned business based in South Somerset, just off the Podimore roundabout on the A37, serving the South West."
+>
+  <PageHeader
+    crumb="About"
+    eyebrow="About R W Prince"
+    title="A family owned business in South Somerset"
+    lede="Based just off the Podimore roundabout on the A37, serving businesses, councils and the general public throughout the South West."
+  />
+
+  <section class="about">
+    <div class="wrap about-grid">
+      <div>
+        <p class="eyebrow">Our story</p>
+        <h2>Built on the A37, for the South West</h2>
+        <p>R W Prince is a family owned business based in South Somerset, just off the Podimore roundabout on the A37. We have a vast collective knowledge and industry experience of waste disposal, road building, car parks and everything tarmac related, supplying businesses, councils and the general public throughout the South West.</p>
+        <p>Registered in England &amp; Wales, company #4861402.</p>
+      </div>
+      <div class="about-card">
+        <h3>Why work with us</h3>
+        <ul class="check-list">
+          <li>Family owned and operated</li>
+          <li>One yard for aggregates, asphalt, waste &amp; plant</li>
+          <li>Prime location on the A303 / A37 junction</li>
+          <li>Card payments accepted</li>
+          <li>Tarmac &amp; asphalt available on Sundays</li>
+          <li>Serving businesses, councils &amp; the public</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Our fleet &amp; yard</p>
+        <h2>Equipment out on the road and on site</h2>
+      </div>
+      <div class="gallery-grid">
+        {galleryImages.map((img) => (
+          <div class="gallery-item" style={`background-image:url('${img}')`}></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Want to talk to the yard directly?"
+    text="Call us or send an enquiry — we'll come back to you the same working day."
+  />
+</Base>

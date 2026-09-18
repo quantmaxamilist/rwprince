@@ -1,0 +1,19 @@
+---
+interface Props {
+  crumb: string;
+  eyebrow: string;
+  title: string;
+  lede: string;
+}
+
+const { crumb, eyebrow, title, lede } = Astro.props;
+---
+
+<section class="page-header">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> / {crumb}</div>
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{title}</h1>
+    <p>{lede}</p>
+  </div>
+</section>

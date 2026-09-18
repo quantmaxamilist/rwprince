@@ -1,0 +1,41 @@
+---
+import { navItems, site, footerHours } from '../data/site';
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-col">
+      <div class="footer-brand-block">
+        <img src="/images/logo-trimmed.png" alt="R W Prince" class="brand-logo footer-logo" />
+      </div>
+      <p>Family owned suppliers of aggregates and asphalt, and providers of plant hire and waste disposal services, based in South Somerset.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Info</h4>
+      <div class="footer-contact-list">
+        <span>{site.address}</span>
+        <a href={site.phoneHref}>{site.phone}</a>
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Opening Hours</h4>
+      <ul class="footer-hours">
+        {footerHours.map((h) => (
+          <li><span>{h.day}</span><span>{h.hours}</span></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>{site.companyNumber}</p>
+    <p class="footer-muted">Concept rebuild — not affiliated with rwprince.co.uk.</p>
+  </div>
+</footer>
